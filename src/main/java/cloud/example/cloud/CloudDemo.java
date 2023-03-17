@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class CloudDemo {
     @GetMapping("/mycloud")
     public String getData(){
-        return "store the data";
+        return "store the data on cloud.....";
 
     }
 }
