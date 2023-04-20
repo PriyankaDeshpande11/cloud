@@ -27,8 +27,8 @@ pipeline {
         stage('Building & Tag Docker Image') {
             steps {
                 echo 'Starting Building Docker Image'
-                sh 'docker build -t satyam88/bookmytrip-ms .'
-                sh 'docker build -t bookmytrip-ms .'
+                sh 'docker build -t piyudeshpande11/cloud .'
+                sh 'docker build -t cloud .'
                 echo 'Completed  Building Docker Image'
             }
         }
@@ -43,9 +43,9 @@ pipeline {
            steps {
               script {
                  withCredentials([string(credentialsId: 'dockerhubCred', variable: 'dockerhubCred')]){
-                 sh 'docker login docker.io -u satyam88 -p ${dockerhubCred}'
+                 sh 'docker login docker.io -u piyudeshpande11 -p ${dockerhubCred}'
                  echo "Push Docker Image to DockerHub : In Progress"
-                 sh 'docker push satyam88/bookmytrip-ms:latest'
+                 sh 'docker push piyudeshpande11/cloud:latest'
                  echo "Push Docker Image to DockerHub : In Progress"
                  sh 'whoami'
                  }
